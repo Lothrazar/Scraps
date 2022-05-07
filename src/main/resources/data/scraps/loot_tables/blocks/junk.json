@@ -1,0 +1,72 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "name": "scraps:junk"
+            },
+            {
+              "type": "group",
+              "children": [
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_bone"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_copper"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_flint"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_glass"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_leather"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_stone"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_string"
+                },
+                {
+                  "type": "minecraft:item",
+                  "name": "scraps:scrap_wood"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
