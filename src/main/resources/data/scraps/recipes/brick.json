@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    },
+    {
+      "item": "scraps:shard_brick"
+    }
+  ],
+  "result": {
+    "item": "minecraft:brick",
+    "count": 1
+  }
+}

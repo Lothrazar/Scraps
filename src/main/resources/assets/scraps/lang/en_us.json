@@ -1,6 +1,10 @@
 {
 
 
+	"junk.guide":"Junk is useless leftover material found in garbage and scrap piles",
+	"shard.guide":"Shards are found inside garbage and scrap piles",
+	"scrap.guide":"Scrap piles are found around the world.  They can shards of useful materials.  ",
+	"garbage.guide":"Garbage blocks are similar to compressed scrap piles in solid form",
 	"block.scraps.junk": "Junk",
 	"item.scraps.scrap_bone": "Bone Fragment"
 }

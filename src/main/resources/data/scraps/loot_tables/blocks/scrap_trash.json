@@ -2,8 +2,8 @@
 	"type": "minecraft:block",
 	"pools": [
 		{
-			"rolls": 1.0,
-			"bonus_rolls": 0.0,
+			"rolls": 2.0,
+			"bonus_rolls": 1.0,
 			"entries": [
 				{
 					"type": "minecraft:item",
@@ -19,7 +19,19 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:string"
+					"name": "scraps:shard_cloth"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "scraps:shard_cloth"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:rotten_flesh"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "scraps:junk"
 				},
 				{
 					"type": "minecraft:item",

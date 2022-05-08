@@ -1,4 +1,4 @@
-package com.lothrazar.scraps;
+package com.lothrazar.scraps.content;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;

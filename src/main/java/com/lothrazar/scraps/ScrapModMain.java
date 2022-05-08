@@ -2,6 +2,10 @@ package com.lothrazar.scraps;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import com.lothrazar.scraps.content.ClientStuff;
+import com.lothrazar.scraps.content.ScrapsConfig;
+import com.lothrazar.scraps.content.ScrapModRegistry;
+import com.lothrazar.scraps.content.ScrapWorldgen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -21,7 +25,7 @@ public class ScrapModMain {
     ScrapModRegistry.ITEMS.register(eventBus);
     ScrapModRegistry.TILE_ENTITIES.register(eventBus);
     eventBus.addListener(this::setup);
-    //    ConfigManager.setup();
+    ScrapsConfig.setup();
     DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
       eventBus.addListener(ClientStuff::setup);
     });

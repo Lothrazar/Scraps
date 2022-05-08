@@ -1,5 +1,6 @@
-package com.lothrazar.scraps;
+package com.lothrazar.scraps.content;
 
+import com.lothrazar.scraps.ScrapModMain;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biome.BiomeCategory;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
@@ -14,16 +15,16 @@ public class BiomeLoader {
 
   @SubscribeEvent(priority = EventPriority.HIGH)
   public static void biomeLoadingEvent(BiomeLoadingEvent event) {
+    if (!ScrapsConfig.WORLDGEN_ENABLED.get()) {
+      return;
+    }
     BiomeGenerationSettingsBuilder builder = event.getGeneration();
     BiomeCategory cat = event.getCategory();
     if (cat != Biome.BiomeCategory.NETHER
-        && cat != Biome.BiomeCategory.THEEND
-        && cat != Biome.BiomeCategory.BEACH
-        && cat != Biome.BiomeCategory.DESERT
-        && cat != Biome.BiomeCategory.MESA
-        && cat != Biome.BiomeCategory.ICY
-        && cat != Biome.BiomeCategory.OCEAN) {
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.JUNK_PLACED_FEATURE);
+        && cat != Biome.BiomeCategory.THEEND) {
+      //overworld-like
+      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.PATCH_CAVE);
+      //      builder.addFeature(Decoration.UNDERGROUND_DECORATION, ScrapWorldgen.SCRAP_CAVE_FEATURE);
     }
   }
 }
