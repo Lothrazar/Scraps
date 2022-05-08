@@ -34,10 +34,10 @@ public class ScrapWorldgen {
   public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JUNK_FEATURE = FeatureUtils.register(new ResourceLocation(ScrapModMain.MODID, "junk").toString(),
       Feature.RANDOM_PATCH, new RandomPatchConfiguration(128, 0, 0, PlacementUtils.filtered(Feature.SIMPLE_BLOCK,
           new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState> builder()
-              .add(ScrapModRegistry.JUNK.get().defaultBlockState(), 10)
-              .add(ScrapModRegistry.JUNK.get().defaultBlockState(), 7)
-              .add(ScrapModRegistry.GARBAGE.get().defaultBlockState(), 5)
-              .add(ScrapModRegistry.JUNK.get().defaultBlockState(), 1))),
+              .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 10)
+              .add(ScrapModRegistry.SCRAP_BONES.get().defaultBlockState(), 7)
+              .add(ScrapModRegistry.SCRAP_FOOD.get().defaultBlockState(), 5)
+              .add(ScrapModRegistry.SCRAP_METAL.get().defaultBlockState(), 1))),
           BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(
               BlockPredicate.matchesBlocks(ImmutableList.of(Blocks.ICE, Blocks.SAND, Blocks.RED_SAND, Blocks.WATER, Blocks.LAVA),
                   new BlockPos(0, -1, 0)))))));

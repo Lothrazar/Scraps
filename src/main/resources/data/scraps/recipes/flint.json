@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scraps:shard_flint"
+    },
+    {
+      "item": "scraps:shard_flint"
+    },
+    {
+      "item": "scraps:shard_flint"
+    },
+    {
+      "item": "scraps:shard_flint"
+    }
+  ],
+  "result": {
+    "item": "minecraft:flint",
+    "count": 1
+  }
+}

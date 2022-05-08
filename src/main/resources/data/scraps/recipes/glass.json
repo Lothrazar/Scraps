@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    },
+    {
+      "item": "scraps:shard_glass"
+    }
+  ],
+  "result": {
+    "item": "minecraft:glass",
+    "count": 1
+  }
+}

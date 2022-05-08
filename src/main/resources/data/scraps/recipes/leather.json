@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    },
+    {
+      "item": "scraps:shard_leather"
+    }
+  ],
+  "result": {
+    "item": "minecraft:leather",
+    "count": 1
+  }
+}

@@ -7,15 +7,19 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:bone"
+					"name": "scraps:shard_flint"
 				},
 				{
 					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
+					"name": "scraps:shard_glass"
 				},
 				{
 					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
+					"name": "scraps:shard_leather"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:string"
 				},
 				{
 					"type": "minecraft:item",

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    },
+    {
+      "item": "scraps:shard_wood"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stick",
+    "count": 1
+  }
+}

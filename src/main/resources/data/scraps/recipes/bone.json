@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    },
+    {
+      "item": "scraps:shard_bone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bone",
+    "count": 1
+  }
+}
