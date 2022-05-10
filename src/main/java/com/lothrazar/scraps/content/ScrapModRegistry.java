@@ -5,6 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Material;
@@ -26,11 +27,11 @@ public class ScrapModRegistry {
       return new ItemStack(SCRAP_TRASH.get());
     }
   };
-  public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new Block(Block.Properties.of(Material.STONE))); // garbage full block
+  public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new Block(Block.Properties.of(Material.STONE).strength(0.5F))); // garbage full block
   //junk is a small pile of stuff
-  public static final RegistryObject<Block> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new Block(Block.Properties.of(Material.STONE))); // TODO layers ?
-  public static final RegistryObject<Block> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new Block(Block.Properties.of(Material.STONE)));
-  public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new Block(Block.Properties.of(Material.STONE)));
+  public static final RegistryObject<Block> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak())); // TODO layers ?
+  public static final RegistryObject<Block> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
+  public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   static {
     //blockitems    
     ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().tab(TAB)));
@@ -38,7 +39,13 @@ public class ScrapModRegistry {
     ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_metal", () -> new BlockItem(SCRAP_METAL.get(), new Item.Properties().tab(TAB)));
     //items
-    ITEMS.register("junk", () -> new Item(new Item.Properties().tab(TAB))); //dead item, used for crafting
+    ITEMS.register("junk", () -> new Item(new Item.Properties().tab(TAB)) {
+
+      @Override
+      public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+        return 200;
+      }
+    }); //dead item, used for crafting
     ITEMS.register("shard_bone", () -> new Item(new Item.Properties().tab(TAB)));
     ITEMS.register("shard_flint", () -> new Item(new Item.Properties().tab(TAB)));
     ITEMS.register("shard_glass", () -> new Item(new Item.Properties().tab(TAB)));
@@ -47,7 +54,11 @@ public class ScrapModRegistry {
     ITEMS.register("shard_brick", () -> new Item(new Item.Properties().tab(TAB)));
     ITEMS.register("shard_paper", () -> new Item(new Item.Properties().tab(TAB)));
     ITEMS.register("shard_wood", () -> new Item(new Item.Properties().tab(TAB)));
-    //    ITEMS.register("scrap_stone", () -> new Item(new Item.Properties().tab(TAB)));//4x into cobblestone?  
+    ///NO ..shard diamond? shard emerald shard lapis?    //shard_ender
+    //
+    //YES: 
+    // shard_obsidian
+    //    ITEMS.register("shard_stone", () -> new Item(new Item.Properties().tab(TAB)));//4x into cobblestone?  
   }
   //  garbage pile - size of lili pad, drops random scrap. spawns in world, 
   //  garbage block - drops even more random scrap. spawns in world 

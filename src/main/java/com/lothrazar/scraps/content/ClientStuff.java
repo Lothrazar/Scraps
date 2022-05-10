@@ -10,7 +10,9 @@ public class ClientStuff {
 
   @OnlyIn(Dist.CLIENT)
   public static void setup(FMLClientSetupEvent event) {
-    RenderType c = RenderType.cutout();
+    RenderType c = RenderType.translucent();
     ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_TRASH.get(), c);
+    ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_BONES.get(), c);
+    ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_METAL.get(), c);
   }
 }

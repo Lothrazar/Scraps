@@ -12,6 +12,7 @@ public class ScrapsConfig {
   private static final ForgeConfigSpec.Builder CFG = new ForgeConfigSpec.Builder();
   private static ForgeConfigSpec COMMON_CONFIG;
   public static BooleanValue WORLDGEN_ENABLED;
+  public static BooleanValue STEPHARVEST_ENABLED;
   static {
     initConfig();
   }
@@ -19,6 +20,7 @@ public class ScrapsConfig {
   private static void initConfig() {
     CFG.comment("General settings").push(ScrapModMain.MODID);
     WORLDGEN_ENABLED = CFG.comment("Run worldgen from this mod in biome loader event").define("worldgen.enabled", true);
+    STEPHARVEST_ENABLED = CFG.comment("If true then stepping on a scrap pile will harvest it").define("steptobreak.enabled", true);
     //TODO on contact auto break config?
     CFG.pop(); // one pop for every push
     COMMON_CONFIG = CFG.build();
