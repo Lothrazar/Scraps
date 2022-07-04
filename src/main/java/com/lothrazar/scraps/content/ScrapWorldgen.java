@@ -32,30 +32,57 @@ public class ScrapWorldgen {
   }
 
   //  public static List<PlacementModifier> PLACE_SURFACE = List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-  public static List<PlacementModifier> PLACE_CAVE = List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome());
-  public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> SCRAPS = FeatureUtils.register("scraps",
+  //shared cave thing
+  private static List<PlacementModifier> SHARED_CAVE = List.of(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, BiomeFilter.biome());
+  //
+  //
+  //
+  private static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> BRUSH = FeatureUtils.register("brush",
+      Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState> builder()
+          .add(ScrapModRegistry.SCRAP_BRUSH.get().defaultBlockState(), 4)
+          //          .add(ScrapModRegistry.SCRAP_BRUSH.get().defaultBlockState(), 7)
+          .add(ScrapModRegistry.SCRAP_BRUSH.get().defaultBlockState(), 1))));
+  private static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> BRUSH_PATCH = FeatureUtils.register("brush_patch", Feature.VEGETATION_PATCH,
+      new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK),
+          PlacementUtils.inlinePlaced(BRUSH), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F));
+  public static Holder<PlacedFeature> BRUSH_PLACE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "brush_place").toString(), BRUSH_PATCH, SHARED_CAVE);
+  //
+  //
+  //
+  private static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> BONES = FeatureUtils.register("bones",
+      Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState> builder()
+          .add(ScrapModRegistry.SCRAP_BONES.get().defaultBlockState(), 4)
+          //          .add(ScrapModRegistry.SCRAP_BONES.get().defaultBlockState(), 7)
+          .add(ScrapModRegistry.SCRAP_BONES.get().defaultBlockState(), 1))));
+  private static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> BONES_PATCH = FeatureUtils.register("bones_patch", Feature.VEGETATION_PATCH,
+      new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.STONE),
+          PlacementUtils.inlinePlaced(BONES), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F));
+  public static Holder<PlacedFeature> BONES_PLACE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "bones_place").toString(), BONES_PATCH, SHARED_CAVE);
+  //
+  //
+  //this feature has all of them
+  private static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> TRASH = FeatureUtils.register("trash",
       Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState> builder()
           .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 4)
-          .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 7)
-          .add(ScrapModRegistry.SCRAP_METAL.get().defaultBlockState(), 25)
-          .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 50)
-          .add(ScrapModRegistry.SCRAP_BONES.get().defaultBlockState(), 10))));
-  public static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> PATCH = FeatureUtils.register("patch", Feature.VEGETATION_PATCH,
-      new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK),
-          PlacementUtils.inlinePlaced(SCRAPS), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F));
-  public static Holder<PlacedFeature> PATCH_CAVE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "patch_cave").toString(), PATCH, PLACE_CAVE);
+          //          .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 7)
+          .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 1))));
+  private static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> TRASH_PATCH = FeatureUtils.register("trash_patch", Feature.VEGETATION_PATCH,
+      new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.GRASS_BLOCK),
+          PlacementUtils.inlinePlaced(TRASH), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F));
+  public static Holder<PlacedFeature> TRASH_PLACE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "trash_place").toString(), TRASH_PATCH, SHARED_CAVE);
+  ///
+  ///
+  ///
+  private static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> METAL = FeatureUtils.register("metal",
+      Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState> builder()
+          .add(ScrapModRegistry.SCRAP_METAL.get().defaultBlockState(), 4)
+          //          .add(ScrapModRegistry.SCRAP_METAL.get().defaultBlockState(), 7)
+          .add(ScrapModRegistry.SCRAP_METAL.get().defaultBlockState(), 1))));
+  private static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> METAL_PATCH = FeatureUtils.register("metal_patch", Feature.VEGETATION_PATCH,
+      new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(Blocks.STONE),
+          PlacementUtils.inlinePlaced(METAL), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(4, 7), 0.3F));
+  public static Holder<PlacedFeature> METAL_PLACE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "metal_place").toString(), METAL_PATCH, SHARED_CAVE);
   //
   //
-  //  public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JUNK_AIR = FeatureUtils.register(new ResourceLocation(ScrapModMain.MODID, "junk").toString(),
-  //      Feature.RANDOM_PATCH, new RandomPatchConfiguration(128, 0, 0, PlacementUtils.filtered(Feature.SIMPLE_BLOCK,
-  //          new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState> builder()
-  //              .add(ScrapModRegistry.SCRAP_TRASH.get().defaultBlockState(), 10)
-  //              .add(ScrapModRegistry.SCRAP_BONES.get().defaultBlockState(), 7)
-  //              //              .add(ScrapModRegistry.SCRAP_FOOD.get().defaultBlockState(), 5)
-  //              .add(ScrapModRegistry.SCRAP_METAL.get().defaultBlockState(), 1))),
-  //          BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(
-  //              BlockPredicate.matchesBlocks(ImmutableList.of(Blocks.ICE, Blocks.SAND, Blocks.RED_SAND, Blocks.WATER, Blocks.LAVA),
-  //                  new BlockPos(0, -1, 0)))))));
-  //  public static Holder<PlacedFeature> SCRAP_SURFACE_FEATURE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "scrap_surface").toString(), JUNK_AIR, PLACE_SURFACE);
-  //  public static Holder<PlacedFeature> SCRAP_CAVE_FEATURE = PlacementUtils.register(new ResourceLocation(ScrapModMain.MODID, "scrap_cave").toString(), JUNK_AIR, PLACE_CAVE);
+  //now start another feature 
 }

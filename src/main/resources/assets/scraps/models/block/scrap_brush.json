@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/block",
 	"textures": {
-		"particle": "minecraft:block/bone_block_top",
-		"0":"minecraft:block/bone_block_top"
+		"particle": "scraps:block/scrap_bones",
+		"0": "minecraft:block/moss_block"
 	},
 	"elements": [
 		{

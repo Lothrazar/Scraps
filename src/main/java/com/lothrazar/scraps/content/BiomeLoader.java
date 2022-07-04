@@ -23,7 +23,10 @@ public class BiomeLoader {
     if (cat != Biome.BiomeCategory.NETHER
         && cat != Biome.BiomeCategory.THEEND) {
       //overworld-like
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.PATCH_CAVE);
+      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.TRASH_PLACE);
+      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.BRUSH_PLACE);
+      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.BONES_PLACE);
+      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.METAL_PLACE);
       //      builder.addFeature(Decoration.UNDERGROUND_DECORATION, ScrapWorldgen.SCRAP_CAVE_FEATURE);
     }
   }

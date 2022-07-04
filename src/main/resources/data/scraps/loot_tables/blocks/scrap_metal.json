@@ -65,11 +65,15 @@
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:iron_bars"
+					"name": "minecraft:iron_nugget"
 				},
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:prismarine_shard"
+					"name": "minecraft:gold_nugget"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:iron_bars"
 				},
 				{
 					"type": "minecraft:item",

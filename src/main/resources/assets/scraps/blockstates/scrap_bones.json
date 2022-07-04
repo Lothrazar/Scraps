@@ -1,5 +1,10 @@
 {
   "variants": {
- 		"": {"model": "scraps:block/scrap_bones"}
+ 		"": [
+ 			{"model": "scraps:block/scrap_bones"},
+ 			{"model": "scraps:block/scrap_bones","y":90},
+ 			{"model": "scraps:block/scrap_bones","y":180},
+ 			{"model": "scraps:block/scrap_bones","y":270}
+ 		]
   }
 }
