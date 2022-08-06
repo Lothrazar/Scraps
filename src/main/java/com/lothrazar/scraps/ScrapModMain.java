@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.lothrazar.scraps.content.ClientStuff;
 import com.lothrazar.scraps.content.ScrapModRegistry;
-import com.lothrazar.scraps.content.ScrapWorldgen;
+import com.lothrazar.scraps.content.ScrapGenPlacements;
 import com.lothrazar.scraps.content.ScrapsConfig;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Scoreboard;
@@ -37,7 +37,7 @@ public class ScrapModMain {
 
   private void setup(final FMLCommonSetupEvent event) {
     event.enqueueWork(() -> {
-      ScrapWorldgen.init();
+      ScrapGenPlacements.init();
     });
   }
 }

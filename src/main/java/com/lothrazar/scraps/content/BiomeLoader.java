@@ -20,14 +20,14 @@ public class BiomeLoader {
     }
     BiomeGenerationSettingsBuilder builder = event.getGeneration();
     BiomeCategory cat = event.getCategory();
-    if (cat != Biome.BiomeCategory.NETHER
-        && cat != Biome.BiomeCategory.THEEND) {
-      //overworld-like
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.TRASH_PLACE);
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.BRUSH_PLACE);
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.BONES_PLACE);
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapWorldgen.METAL_PLACE);
-      //      builder.addFeature(Decoration.UNDERGROUND_DECORATION, ScrapWorldgen.SCRAP_CAVE_FEATURE);
+    boolean isNether = cat == Biome.BiomeCategory.NETHER;
+    boolean isEnd = cat == Biome.BiomeCategory.THEEND;
+    boolean assumeOverworld = !isNether && !isEnd;
+    if (assumeOverworld) {
+      //overworld-like  
+      System.out.println("FFFF" + cat);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.PF_SCRAP_TEST);
+      //      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapGenPlacements.PF_SCRAP_BONES);
     }
   }
 }
