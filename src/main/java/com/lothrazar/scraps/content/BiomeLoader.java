@@ -25,9 +25,8 @@ public class BiomeLoader {
     boolean assumeOverworld = !isNether && !isEnd;
     if (assumeOverworld) {
       //overworld-like  
-      System.out.println("FFFF" + cat);
       builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.PF_SCRAP_TEST);
-      //      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapGenPlacements.PF_SCRAP_BONES);
+      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapGenPlacements.SCRAP_SINGLE);
     }
   }
 }
