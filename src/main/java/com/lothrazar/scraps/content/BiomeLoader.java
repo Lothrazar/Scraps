@@ -26,7 +26,7 @@ public class BiomeLoader {
     if (assumeOverworld) {
       //overworld-like  
       builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.PF_SCRAP_TEST);
-      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapGenPlacements.SCRAP_SINGLE);
+      //      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapGenPlacements.SCRAP_SINGLE);
     }
   }
 }
