@@ -13,6 +13,7 @@ public class ClientStuff {
     RenderType c = RenderType.translucent();
     ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_TRASH.get(), c);
     ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_BONES.get(), c);
+    ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_BRUSH.get(), c);
     ItemBlockRenderTypes.setRenderLayer(ScrapModRegistry.SCRAP_METAL.get(), c);
   }
 }

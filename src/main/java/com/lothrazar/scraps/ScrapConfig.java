@@ -1,13 +1,12 @@
-package com.lothrazar.scraps.content;
+package com.lothrazar.scraps;
 
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
-import com.lothrazar.scraps.ScrapModMain;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
 import net.minecraftforge.fml.loading.FMLPaths;
 
-public class ScrapsConfig {
+public class ScrapConfig {
 
   private static final ForgeConfigSpec.Builder CFG = new ForgeConfigSpec.Builder();
   private static ForgeConfigSpec COMMON_CONFIG;

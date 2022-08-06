@@ -1,4 +1,4 @@
-package com.lothrazar.scraps.content;
+package com.lothrazar.scraps.world;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -29,17 +29,26 @@ public class ScrapGenPlacements {
   //          NoiseThresholdCountPlacement.of(NOISELEVEL, NOISEABOVE, NOISEBELOW),
   //          RarityFilter.onAverageOnceEvery(2),
   //          HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(40), VerticalAnchor.belowTop(120)), //configs
-  public static final Holder<PlacedFeature> PF_SCRAP_TEST = PlacementUtils.register("scrap_test", ScrapGenFeatures.SCRAP_TEST,
-      //
-      //      List.of(
-      CountPlacement.of(256),
+  public static final Holder<PlacedFeature> METAL_SMALL = PlacementUtils.register("metal_small", ScrapGenFeatures.METAL_SIMPLE,
+      CountPlacement.of(20),
       InSquarePlacement.spread(),
       HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-50), VerticalAnchor.belowTop(222)),
       EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.hasSturdyFace(Direction.UP), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12),
       RandomOffsetPlacement.vertical(ConstantInt.of(1)),
-      BiomeFilter.biome()
+      BiomeFilter.biome());
   //
-  );
+  //
+  //
+  //
+  public static final Holder<PlacedFeature> BRUSH_LARGE = PlacementUtils.register("brush_large", ScrapGenFeatures.BRUSH_SIMPLE,
+      CountPlacement.of(120),
+      InSquarePlacement.spread(),
+      HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-50), VerticalAnchor.belowTop(222)),
+      EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.hasSturdyFace(Direction.UP), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12),
+      RandomOffsetPlacement.vertical(ConstantInt.of(1)),
+      BiomeFilter.biome());
+  //
+  //
   //  public static final Holder<PlacedFeature> SCRAP_SINGLE = PlacementUtils.register("scrap_single", ScrapGenFeatures.SCRAP_single,
   //      // list starts here
   //      CountPlacement.of(256), 

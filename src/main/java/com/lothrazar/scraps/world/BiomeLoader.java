@@ -1,5 +1,6 @@
-package com.lothrazar.scraps.content;
+package com.lothrazar.scraps.world;
 
+import com.lothrazar.scraps.ScrapConfig;
 import com.lothrazar.scraps.ScrapModMain;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biome.BiomeCategory;
@@ -15,7 +16,7 @@ public class BiomeLoader {
 
   @SubscribeEvent(priority = EventPriority.HIGH)
   public static void biomeLoadingEvent(BiomeLoadingEvent event) {
-    if (!ScrapsConfig.WORLDGEN_ENABLED.get()) {
+    if (!ScrapConfig.WORLDGEN_ENABLED.get()) {
       return;
     }
     BiomeGenerationSettingsBuilder builder = event.getGeneration();
@@ -25,8 +26,8 @@ public class BiomeLoader {
     boolean assumeOverworld = !isNether && !isEnd;
     if (assumeOverworld) {
       //overworld-like  
-      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.PF_SCRAP_TEST);
-      //      builder.addFeature(Decoration.TOP_LAYER_MODIFICATION, ScrapGenPlacements.SCRAP_SINGLE);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.METAL_SMALL);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BRUSH_LARGE);
     }
   }
 }

@@ -73,5 +73,10 @@ public class ScrapModRegistry {
   //  input 32 scrap iron for one iron nugget
   //  input 8 scrap string for 1 string 
   //
-  //
+  //Darkosto — 07/11/2022
+  //  * Configurable size for scrap generation (Potentially have small, medium, and large piles)
+  //  * Y level configs
+  //  * Use a similar type of harvest to the minecraft archeology mechanics? Using a shovel or tool to properly break the blocks instead of stepping on
+  //      * stepping on gives a broken item because the player wasn't "careful" to harvest
+  //  * Recycle Mechanic to process through machines
 }

@@ -1,5 +1,6 @@
 package com.lothrazar.scraps.content;
 
+import com.lothrazar.scraps.ScrapConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -10,7 +11,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CactusBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -41,7 +41,7 @@ public class BlockScraps extends Block {
   //if config says so, break block on contact
   @Override
   public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-    if (!worldIn.isClientSide && ScrapsConfig.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
+    if (!worldIn.isClientSide && ScrapConfig.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
       worldIn.destroyBlock(pos, true);
     }
   }
@@ -49,10 +49,10 @@ public class BlockScraps extends Block {
   //make it break if no stuff below
   @Override
   public boolean canSurvive(BlockState bs, LevelReader level, BlockPos pos) {
-    CactusBlock y;
     return level.getBlockState(pos.below()).getMaterial().isSolid();
   }
 
+  //update when surrounding changes
   @SuppressWarnings("deprecation")
   @Override
   public BlockState updateShape(BlockState bs, Direction face, BlockState bsOp, LevelAccessor level, BlockPos pos, BlockPos posOther) {
