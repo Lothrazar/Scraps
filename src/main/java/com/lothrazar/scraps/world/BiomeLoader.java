@@ -28,6 +28,7 @@ public class BiomeLoader {
       //overworld-like  
       builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.METAL_SMALL);
       builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BRUSH_LARGE);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BONE_SMALL);
     }
   }
 }
