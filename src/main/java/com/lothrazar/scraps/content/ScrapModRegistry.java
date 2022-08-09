@@ -34,7 +34,8 @@ public class ScrapModRegistry {
       .lightLevel(s -> 15).instabreak()));
   public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of(Material.STONE)
       .lightLevel(s -> 15).instabreak()));
-  public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
+  public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE)
+      .lightLevel(s -> 15).instabreak()));
   static {
     //blockitems    
     ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().tab(TAB)));

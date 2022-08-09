@@ -26,9 +26,14 @@ public class BiomeLoader {
     boolean assumeOverworld = !isNether && !isEnd;
     if (assumeOverworld) {
       //overworld-like  
-      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.METAL_SMALL);
-      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BRUSH_LARGE);
       builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BONE_SMALL);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BRUSH_SMALL);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.TRASH_SMALL);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.METAL_SMALL);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BONE_LARGE);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.BRUSH_LARGE);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.TRASH_LARGE);
+      builder.addFeature(Decoration.VEGETAL_DECORATION, ScrapGenPlacements.METAL_LARGE);
     }
   }
 }
