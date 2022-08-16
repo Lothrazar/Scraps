@@ -3,16 +3,12 @@ package com.lothrazar.scraps.content;
 import com.lothrazar.scraps.ScrapModMain;
 import com.lothrazar.scraps.blocks.BlockGarbage;
 import com.lothrazar.scraps.blocks.BlockScraps;
-import com.lothrazar.scraps.blocks.salvager.RecipeSalvager;
-import net.minecraft.core.Registry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
@@ -25,9 +21,9 @@ public class ScrapModRegistry {
 
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ScrapModMain.MODID);
   public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ScrapModMain.MODID);
-  public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ScrapModMain.MODID);
-  public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, ScrapModMain.MODID);
-  public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ScrapModMain.MODID);
+  //  public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ScrapModMain.MODID);
+  //  public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, ScrapModMain.MODID);
+  //  public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ScrapModMain.MODID);
   public static final CreativeModeTab TAB = new CreativeModeTab(ScrapModMain.MODID) {
 
     @Override
@@ -43,6 +39,9 @@ public class ScrapModRegistry {
   public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   static {
     //blockitems    
+    //?? trash_bag : use it on the piles to pick them up it charges durability
+    // full garbage bag-> garbage block and container item as the empty trash bag again?  
+    //    ITEMS.register("scavenger", () -> new Item(new Item.Properties().tab(TAB))); // BOTTLE FULL OF JUNK?
     ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().tab(TAB)));
@@ -71,6 +70,6 @@ public class ScrapModRegistry {
     //    ITEMS.register("shard_stone", () -> new Item(new Item.Properties().tab(TAB)));//4x into cobblestone?  
   }
   //
-  public static final RegistryObject<RecipeType<RecipeSalvager>> RECIPE = RECIPE_TYPES.register("salvager", () -> new RecipeType<RecipeSalvager>() {});
-  public static final RegistryObject<RecipeSalvager.SerializeCrusher> RECIPE_S = RECIPE_SERIALIZERS.register("salvager", () -> new RecipeSalvager.SerializeCrusher());
+  //  public static final RegistryObject<RecipeType<RecipeSalvager>> RECIPE = RECIPE_TYPES.register("salvager", () -> new RecipeType<RecipeSalvager>() {});
+  //  public static final RegistryObject<RecipeSalvager.SerializeCrusher> RECIPE_S = RECIPE_SERIALIZERS.register("salvager", () -> new RecipeSalvager.SerializeCrusher());
 }

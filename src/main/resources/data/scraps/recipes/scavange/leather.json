@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "g ",
+    "jj"
+  ],
+  "key": {
+    "j": {
+      "tag": "scraps:junk"
+    },
+    "g": {
+      "tag": "scraps:garbage"
+    }
+  },
+  "result": {
+    "item": "scraps:shard_leather",
+    "count": 3
+  }
+}

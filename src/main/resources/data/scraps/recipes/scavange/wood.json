@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "jg",
+    "j "
+  ],
+  "key": {
+    "j": {
+      "tag": "scraps:junk"
+    },
+    "g": {
+      "tag": "scraps:garbage"
+    }
+  },
+  "result": {
+    "item": "scraps:shard_wood",
+    "count": 6
+  }
+}
