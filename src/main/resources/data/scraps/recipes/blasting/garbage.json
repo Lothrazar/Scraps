@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "tag": "scraps:garbage"
+  },
+  "result": "scraps:shard_glass",
+  "experience": 1.1,
+  "cookingtime": 250
+}

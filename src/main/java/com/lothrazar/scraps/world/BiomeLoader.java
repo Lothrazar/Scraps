@@ -1,7 +1,7 @@
 package com.lothrazar.scraps.world;
 
-import com.lothrazar.scraps.ScrapConfig;
 import com.lothrazar.scraps.ScrapModMain;
+import com.lothrazar.scraps.content.ScrapConfig;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biome.BiomeCategory;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;

@@ -1,6 +1,6 @@
 package com.lothrazar.scraps.world;
 
-import com.lothrazar.scraps.ScrapConfig;
+import com.lothrazar.scraps.content.ScrapConfig;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;

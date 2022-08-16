@@ -1,10 +1,15 @@
 package com.lothrazar.scraps.content;
 
 import com.lothrazar.scraps.ScrapModMain;
+import com.lothrazar.scraps.blocks.BlockGarbage;
+import com.lothrazar.scraps.blocks.BlockScraps;
+import com.lothrazar.scraps.blocks.salvager.RecipeSalvager;
+import net.minecraft.core.Registry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -20,6 +25,8 @@ public class ScrapModRegistry {
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ScrapModMain.MODID);
   public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ScrapModMain.MODID);
   public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ScrapModMain.MODID);
+  public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, ScrapModMain.MODID);
+  public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ScrapModMain.MODID);
   public static final CreativeModeTab TAB = new CreativeModeTab(ScrapModMain.MODID) {
 
     @Override
@@ -27,17 +34,17 @@ public class ScrapModRegistry {
       return new ItemStack(SCRAP_TRASH.get());
     }
   };
-  public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new Block(Block.Properties.of(Material.STONE).strength(0.5F))); // garbage full block
+  //  public static final RegistryObject<Block> SALVAGER = BLOCKS.register("salvager", () -> new BlockSalvager(Block.Properties.of(Material.STONE).strength(0.5F)));
+  //  public static final RegistryObject<BlockEntityType<TileSalvager>> T_SALVAGER = TILE_ENTITIES.register("salvager", () -> BlockEntityType.Builder.of(TileSalvager::new, SALVAGER.get()).build(null));
+  public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new BlockGarbage(Block.Properties.of(Material.STONE).strength(0.5F)));
   //junk is a small pile of stuff
   public static final RegistryObject<Block> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak())); // TODO layers ?
-  public static final RegistryObject<Block> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new BlockScraps(Block.Properties.of(Material.STONE)
-      .lightLevel(s -> 15).instabreak()));
-  public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of(Material.STONE)
-      .lightLevel(s -> 15).instabreak()));
-  public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE)
-      .lightLevel(s -> 15).instabreak()));
+  public static final RegistryObject<Block> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
+  public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
+  public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   static {
     //blockitems    
+    //    ITEMS.register("salvager", () -> new BlockItem(SALVAGER.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().tab(TAB)));
@@ -65,19 +72,7 @@ public class ScrapModRegistry {
     // shard_obsidian
     //    ITEMS.register("shard_stone", () -> new Item(new Item.Properties().tab(TAB)));//4x into cobblestone?  
   }
-  //  garbage pile - size of lili pad, drops random scrap. spawns in world, 
-  //  garbage block - drops even more random scrap. spawns in world 
-  // 
   //
-  //  Recycler block: 
-  //  recipes 1 input slot one output slot. power = maybe not RF ?
-  //  input 32 scrap iron for one iron nugget
-  //  input 8 scrap string for 1 string 
-  //
-  //Darkosto — 07/11/2022
-  //  * Configurable size for scrap generation (Potentially have small, medium, and large piles)
-  //  * Y level configs
-  //  * Use a similar type of harvest to the minecraft archeology mechanics? Using a shovel or tool to properly break the blocks instead of stepping on
-  //      * stepping on gives a broken item because the player wasn't "careful" to harvest
-  //  * Recycle Mechanic to process through machines
+  public static final RegistryObject<RecipeType<RecipeSalvager>> RECIPE = RECIPE_TYPES.register("salvager", () -> new RecipeType<RecipeSalvager>() {});
+  public static final RegistryObject<RecipeSalvager.SerializeCrusher> RECIPE_S = RECIPE_SERIALIZERS.register("salvager", () -> new RecipeSalvager.SerializeCrusher());
 }

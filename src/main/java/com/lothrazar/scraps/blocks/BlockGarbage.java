@@ -1,27 +1,22 @@
-package com.lothrazar.scraps.content;
+package com.lothrazar.scraps.blocks;
 
-import com.lothrazar.scraps.ScrapConfig;
+import com.lothrazar.scraps.content.ScrapConfig;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BlockScraps extends Block {
+public class BlockGarbage extends Block {
 
   //just like carpet
-  protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
+  protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 15.0D, 16.0D);
 
-  public BlockScraps(Properties properties) {
+  public BlockGarbage(Properties properties) {
     super(properties.strength(0.3F).noOcclusion());
   }
 
@@ -29,7 +24,7 @@ public class BlockScraps extends Block {
   @Override
   @Deprecated
   public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-    return Shapes.empty();
+    return SHAPE;
   }
 
   //general shape including select box
@@ -42,20 +37,11 @@ public class BlockScraps extends Block {
   @Override
   public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
     if (!worldIn.isClientSide && ScrapConfig.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
-      worldIn.destroyBlock(pos, true);
+      //      worldIn.destroyBlock(pos, true);
+      //
+      //
+      //
+      //TODO: soul sand? flesh block?
     }
-  }
-
-  //make it break if no stuff below
-  @Override
-  public boolean canSurvive(BlockState bs, LevelReader level, BlockPos pos) {
-    return level.getBlockState(pos.below()).getMaterial().isSolid();
-  }
-
-  //update when surrounding changes
-  @SuppressWarnings("deprecation")
-  @Override
-  public BlockState updateShape(BlockState bs, Direction face, BlockState bsOp, LevelAccessor level, BlockPos pos, BlockPos posOther) {
-    return !bs.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(bs, face, bsOp, level, pos, posOther);
   }
 }

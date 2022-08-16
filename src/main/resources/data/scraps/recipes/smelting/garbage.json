@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 0.1,
+  "ingredient": {
+    "tag": "scraps:garbage"
+  },
+  "result": "scraps:shard_flint"
+}

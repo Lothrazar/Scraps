@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "tag": "scraps:garbage"
+  },
+  "result": "scraps:shard_bone",
+  "experience": 0.1,
+  "cookingtime": 500
+}

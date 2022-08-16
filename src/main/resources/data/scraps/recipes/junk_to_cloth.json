@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "scraps:junk"
+		},
+		{
+			"tag": "forge:scraps/cloth"
+		}
+	],
+	"result": {
+		"item": "scraps:shard_cloth",
+		"count": 2
+	}
+}

@@ -1,13 +1,6 @@
 
-
-A Template for Minecraft Forge mods [https://files.minecraftforge.net/](https://files.minecraftforge.net)
-
-
-Use the GitHub template button, or even better the copyTemplate.sh script
-
-
-[![](http://cf.way2muchnoise.eu/0.svg)](https://www.curseforge.com/minecraft/mc-mods/scraps) 
-[![](http://cf.way2muchnoise.eu/versions/0.svg)](https://www.curseforge.com/minecraft/mc-mods/scraps)
+[![](http://cf.way2muchnoise.eu/621390.svg)](https://www.curseforge.com/minecraft/mc-mods/scraps) 
+[![](http://cf.way2muchnoise.eu/versions/621390.svg)](https://www.curseforge.com/minecraft/mc-mods/scraps)
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -17,3 +10,5 @@ Use the GitHub template button, or even better the copyTemplate.sh script
 [![Support](https://img.shields.io/badge/Patreon-Support-orange.svg?logo=Patreon)](https://www.patreon.com/Lothrazar)
 
 
+scrap_paper.png item by @vadis365
+garbage.png block texture by @Sydokiddo
