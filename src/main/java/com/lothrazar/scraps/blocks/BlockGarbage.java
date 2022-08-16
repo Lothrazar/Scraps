@@ -17,7 +17,7 @@ public class BlockGarbage extends Block {
   protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 15.0D, 16.0D);
 
   public BlockGarbage(Properties properties) {
-    super(properties.strength(0.3F).noOcclusion());
+    super(properties.strength(0.3F).requiresCorrectToolForDrops());
   }
 
   //empty to let you walk thru like grass

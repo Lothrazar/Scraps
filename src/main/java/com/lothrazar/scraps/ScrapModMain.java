@@ -53,6 +53,6 @@ public class ScrapModMain {
   //  *[DONE] Y level configs
   //  *[????] Use a similar type of harvest to the minecraft archeology mechanics? Using a shovel or tool to properly break the blocks instead of stepping on
   //      * stepping on gives a broken item because the player wasn't "careful" to harvest
-  //  *[WIP ] Recycle Mechanic to process through machines
-  // 
+  //  *[????] Recycle Mechanic to process through machines
+  //
 }

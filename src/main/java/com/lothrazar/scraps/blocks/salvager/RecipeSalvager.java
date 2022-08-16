@@ -13,7 +13,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
@@ -108,7 +107,7 @@ public class RecipeSalvager implements Recipe<TileSalvager> {
         Ingredient inputFirst = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "ingredient"));
         // 
         //        ItemStack resultStack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
-        ShapelessRecipe lol;
+        //  ShapelessRecipe lol;
         NonNullList<Ingredient> nonnulllist = itemsFromJson(GsonHelper.getAsJsonArray(json, "results"));
         RecipeSalvager r = new RecipeSalvager(recipeId, inputFirst, json.get("count").getAsInt(), nonnulllist);
         return r;

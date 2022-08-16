@@ -48,6 +48,7 @@ public class BlockSalvager extends BaseEntityBlock {
   //    return createTickerHelper(type, ScrapModRegistry.T_SALVAGER.get(), world.isClientSide ? TileSalvager::clientTick : TileSalvager::serverTick);
   //  }
 
+  @SuppressWarnings("deprecation")
   @Override
   public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
     if (state.getBlock() != newState.getBlock()) {
