@@ -6,56 +6,70 @@
 			"bonus_rolls": 0.0,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:dead_bush"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:dirt"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:grass"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:moss_carpet"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:large_fern"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:tall_grass"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:dead_bush"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_brick"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_wood"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_wood"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:junk"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:junk"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_wood"
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:match_tool",
+									"predicate": {
+										"tag": "scraps:mineable"
+									}
+								}
+							],
+							"name": "minecraft:stick"
+						},
+						{
+							"type": "group",
+							"children": [
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:dead_bush"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:moss_carpet"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:large_fern"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:tall_grass"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:dead_bush"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_brick"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_wood"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_wood"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:junk"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:junk"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_wood"
+								}
+							]
+						}
+					]
 				}
 			]
 		}

@@ -6,48 +6,66 @@
 			"bonus_rolls": 0.0,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:bone"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_bone"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:rotten_flesh"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:junk"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "minecraft:rotten_flesh"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_wood"
-				},
-				{
-					"type": "minecraft:item",
-					"name": "scraps:shard_wood"
+					"type": "minecraft:alternatives",
+					"children": [
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:match_tool",
+									"predicate": {
+										"tag": "scraps:mineable"
+									}
+								}
+							],
+							"name": "minecraft:bone"
+						},
+						{
+							"type": "group",
+							"children": [
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:rotten_flesh"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "minecraft:rotten_flesh"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_wood"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_wood"
+								}
+							]
+						}
+					]
 				}
 			]
 		}

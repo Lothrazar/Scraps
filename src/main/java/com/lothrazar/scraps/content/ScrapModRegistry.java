@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,9 +35,7 @@ public class ScrapModRegistry {
       return new ItemStack(SCRAP_TRASH.get());
     }
   };
-  //  public static final RegistryObject<Block> SALVAGER = BLOCKS.register("salvager", () -> new BlockSalvager(Block.Properties.of(Material.STONE).strength(0.5F)));
-  //  public static final RegistryObject<BlockEntityType<TileSalvager>> T_SALVAGER = TILE_ENTITIES.register("salvager", () -> BlockEntityType.Builder.of(TileSalvager::new, SALVAGER.get()).build(null));
-  public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new BlockGarbage(Block.Properties.of(Material.STONE).strength(0.5F)));
+  public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new BlockGarbage(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN).strength(0.5F)));
   //junk is a small pile of stuff
   public static final RegistryObject<Block> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak())); // TODO layers ?
   public static final RegistryObject<Block> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
@@ -44,7 +43,6 @@ public class ScrapModRegistry {
   public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   static {
     //blockitems    
-    //    ITEMS.register("salvager", () -> new BlockItem(SALVAGER.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().tab(TAB)));

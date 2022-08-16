@@ -1,0 +1,25 @@
+{
+	"type": "plaingrinder:grinder",
+	"input": {
+		"tag": "scraps:garbage"
+	},
+	"result": {
+		"item": "scraps:shard_wood",
+		"count": 4
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "plaingrinder",
+					"type": "forge:mod_loaded"
+				},
+				{
+					"item": "plaingrinder:grinder",
+					"type": "forge:item_exists"
+				}
+			],
+			"type": "forge:and"
+		}
+	]
+}

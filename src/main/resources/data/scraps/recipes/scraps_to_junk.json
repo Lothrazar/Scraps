@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "scraps:junk"
+		},
+		{
+			"tag": "scraps:junk"
+		},
+		{
+			"tag": "scraps:shards"
+		},
+		{
+			"tag": "scraps:shards"
+		}
+	],
+	"result": {
+		"item": "scraps:junk",
+		"count": 3
+	}
+}

@@ -51,8 +51,23 @@ public class ScrapModMain {
   //Darkosto — 07/11/2022
   //  *[DONE] Configurable size for scrap generation (Potentially have small, medium, and large piles)
   //  *[DONE] Y level configs
-  //  *[????] Use a similar type of harvest to the minecraft archeology mechanics? Using a shovel or tool to properly break the blocks instead of stepping on
+  //  *[DONE] Use a similar type of harvest to the minecraft archeology mechanics? Using a shovel or tool to properly break the blocks instead of stepping on
   //      * stepping on gives a broken item because the player wasn't "careful" to harvest
-  //  *[????] Recycle Mechanic to process through machines
+  //
+  //  *[DONE] Recycle Mechanic to process through machines
+  //
+  //feature list
+  //worldgen fixed with new configs
+  //worldgen wont place moss blocks under itself anymore
+  //applies to the four scrap_ piles and the block 'garbage'
+  //breaking without the right tool gives the random broken item
+  //harvest correctly: item data tag    "scraps:mineable" THEN u get non-broken item IE full bone vs broken bone
+  // recycling: 
+  //centered around items 'junk' and 'garbage' as abstract mash of stuff items
+  //craft these and then process into whatever scrap you need
+  //example
+  //if you need flint, make some junk and garbage and find which processing recipe gets scrap_flint, and make flint from that 
+  //optional recipes added for plaingrinder and cyclic:crusher also
+  //
   //
 }

@@ -1,0 +1,34 @@
+{
+	"type": "cyclic:crusher",
+	"input": {
+		"tag": "scraps:garbage"
+	},
+	"energy": {
+		"ticks": 100,
+		"rfpertick": 20
+	},
+	"result": {
+		"item": "scraps:shard_brick",
+		"count": 3
+	},
+	"percent": 65,
+	"bonus": {
+		"item": "scraps:shard_paper",
+		"count": 3
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "cyclic",
+					"type": "forge:mod_loaded"
+				},
+				{
+					"item": "cyclic:crusher",
+					"type": "forge:item_exists"
+				}
+			],
+			"type": "forge:and"
+		}
+	]
+}

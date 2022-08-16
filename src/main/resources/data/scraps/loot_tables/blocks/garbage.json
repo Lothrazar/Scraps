@@ -14,11 +14,7 @@
 								{
 									"condition": "minecraft:match_tool",
 									"predicate": {
-										"enchantments": [
-											{
-												"enchantment": "minecraft:silk_touch"
-											}
-										]
+										"tag": "scraps:mineable"
 									}
 								}
 							],
@@ -29,7 +25,29 @@
 							"children": [
 								{
 									"type": "minecraft:item",
-									"name": "minecraft:bone"
+									"name": "scraps:junk",
+									"functions": [
+										{
+											"function": "minecraft:set_count",
+											"count": {
+												"min": 2,
+												"max": 8
+											}
+										}
+									]
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:junk",
+									"functions": [
+										{
+											"function": "minecraft:set_count",
+											"count": {
+												"min": 2,
+												"max": 4
+											}
+										}
+									]
 								},
 								{
 									"type": "minecraft:item",
@@ -37,15 +55,11 @@
 								},
 								{
 									"type": "minecraft:item",
-									"name": "scraps:shard_bone"
+									"name": "scraps:shard_flint"
 								},
 								{
 									"type": "minecraft:item",
-									"name": "scraps:junk"
-								},
-								{
-									"type": "minecraft:item",
-									"name": "scraps:junk"
+									"name": "scraps:shard_wood"
 								},
 								{
 									"type": "minecraft:item",

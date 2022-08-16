@@ -43,7 +43,6 @@ public class BlockScraps extends Block {
   public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
     if (!worldIn.isClientSide && ScrapConfig.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
       //
-      //
       worldIn.destroyBlock(pos, true);
     }
   }
