@@ -61,10 +61,6 @@
 								},
 								{
 									"type": "minecraft:item",
-									"name": "scraps:junk"
-								},
-								{
-									"type": "minecraft:item",
 									"name": "scraps:shard_wood"
 								}
 							]

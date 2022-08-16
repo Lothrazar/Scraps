@@ -1,11 +1,18 @@
 {
-  "replace": false,
-  "values": [
-    "minecraft:wooden_shovel",
-    "minecraft:iron_shovel",
-    "minecraft:stone_shovel",
-    "minecraft:netherite_shovel",
-    "minecraft:golden_shovel",
-    "minecraft:diamond_shovel"
-  ]
+	"replace": false,
+	"values": [
+		"minecraft:wooden_shovel",
+		"minecraft:iron_shovel",
+		"minecraft:stone_shovel",
+		"minecraft:netherite_shovel",
+		"minecraft:golden_shovel",
+		"minecraft:diamond_shovel",
+		
+		"minecraft:wooden_axe",
+		"minecraft:iron_axe",
+		"minecraft:stone_axe",
+		"minecraft:netherite_axe",
+		"minecraft:golden_axe",
+		"minecraft:diamond_axe"
+	]
 }

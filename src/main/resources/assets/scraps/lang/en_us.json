@@ -1,5 +1,5 @@
 {
-	"itemGroup.scraps":"Scraps and Junk mod",
+	"itemGroup.scraps":"Scraps Junk and Garbage",
 
 	"junk.guide":"Junk is useless leftover material found in garbage and scrap piles",
 	"shard.guide":"Shards are found inside garbage and scrap piles",
@@ -7,10 +7,10 @@
 	"garbage.guide":"Garbage blocks are similar to compressed scrap piles in solid form",
 	"item.scraps.junk": "Junk",
 	"block.scraps.garbage":"Garbage",
-	"block.scraps.scrap_brush":"Pile of Brush",
-	"block.scraps.scrap_trash":"Pile of Trash",
-	"block.scraps.scrap_bones":"Pile of scrap remains",
-	"block.scraps.scrap_metal":"Pile of scrap metal",
+	"block.scraps.scrap_brush":"Scrap brush pile",
+	"block.scraps.scrap_trash":"Scrap trash pile",
+	"block.scraps.scrap_bones":"Scrap pile of remains",
+	"block.scraps.scrap_metal":"Scrap metal pile",
 	"item.scraps.shard_bone": "Bone Shard",
 	"item.scraps.shard_brick": "Brick Shard",
 	"item.scraps.shard_cloth": "Cloth Shard",

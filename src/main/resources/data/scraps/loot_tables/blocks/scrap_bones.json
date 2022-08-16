@@ -49,19 +49,11 @@
 								},
 								{
 									"type": "minecraft:item",
-									"name": "minecraft:rotten_flesh"
+									"name": "scraps:junk"
 								},
 								{
 									"type": "minecraft:item",
 									"name": "minecraft:rotten_flesh"
-								},
-								{
-									"type": "minecraft:item",
-									"name": "scraps:shard_wood"
-								},
-								{
-									"type": "minecraft:item",
-									"name": "scraps:shard_wood"
 								}
 							]
 						}
