@@ -1,0 +1,25 @@
+{
+	"type": "plaingrinder:grinder",
+	"input": {
+		"item": "minecraft:bricks"
+	},
+	"result": {
+		"item": "scraps:shard_brick",
+		"count": 32
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "plaingrinder",
+					"type": "forge:mod_loaded"
+				},
+				{
+					"item": "plaingrinder:grinder",
+					"type": "forge:item_exists"
+				}
+			],
+			"type": "forge:and"
+		}
+	]
+}

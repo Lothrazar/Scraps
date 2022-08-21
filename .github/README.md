@@ -10,5 +10,6 @@
 [![Support](https://img.shields.io/badge/Patreon-Support-orange.svg?logo=Patreon)](https://www.patreon.com/Lothrazar)
 
 
-scrap_paper.png item by @vadis365
-garbage.png block texture by @Sydokiddo
+scrap_paper.png by @vadis365
+
+garbage.png block by @Sydokiddo

@@ -1,5 +1,6 @@
 package com.lothrazar.scraps.blocks;
 
+import com.lothrazar.library.block.BlockFlib;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -10,18 +11,14 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BlockGarbage extends Block {
+public class BlockGarbage extends BlockFlib {
 
-  //just like  SoulSandBlock y;
   protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D);
 
   public BlockGarbage(Properties properties) {
-    super(properties.strength(0.3F)
-        //        .requiresCorrectToolForDrops()
-        .noOcclusion().strength(0.5F).speedFactor(0.4F).sound(SoundType.SOUL_SAND));
+    super(properties.noOcclusion().strength(0.5F).speedFactor(0.4F).sound(SoundType.SOUL_SAND));
   }
 
-  //empty to let you walk thru like grass
   @Override
   @Deprecated
   public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {

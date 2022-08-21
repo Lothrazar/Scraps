@@ -1,5 +1,6 @@
 package com.lothrazar.scraps.content;
 
+import com.lothrazar.library.item.ItemFlib;
 import com.lothrazar.scraps.ScrapModMain;
 import com.lothrazar.scraps.blocks.BlockGarbage;
 import com.lothrazar.scraps.blocks.BlockScraps;
@@ -33,7 +34,7 @@ public class ScrapModRegistry {
   };
   public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new BlockGarbage(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN).strength(0.5F)));
   //junk is a small pile of stuff
-  public static final RegistryObject<Block> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak())); // TODO layers ?
+  public static final RegistryObject<Block> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   public static final RegistryObject<Block> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
@@ -48,21 +49,19 @@ public class ScrapModRegistry {
     ITEMS.register("scrap_metal", () -> new BlockItem(SCRAP_METAL.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_brush", () -> new BlockItem(SCRAP_BRUSH.get(), new Item.Properties().tab(TAB)));
     //items
-    ITEMS.register("junk", () -> new Item(new Item.Properties().tab(TAB)) {
+    ITEMS.register("junk", () -> new ItemFlib(new Item.Properties().tab(TAB)) {
 
       @Override
       public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
         return 200;
       }
     }); //dead item, used for crafting
-    ITEMS.register("shard_bone", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_flint", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_glass", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_leather", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_cloth", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_brick", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_paper", () -> new Item(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_wood", () -> new Item(new Item.Properties().tab(TAB)));
+    ITEMS.register("shard_bone", () -> new ItemFlib(new Item.Properties().tab(TAB)));
+    ITEMS.register("shard_flint", () -> new ItemFlib(new Item.Properties().tab(TAB)));
+    ITEMS.register("shard_leather", () -> new ItemFlib(new Item.Properties().tab(TAB)));
+    ITEMS.register("shard_brick", () -> new ItemFlib(new Item.Properties().tab(TAB)));
+    ITEMS.register("shard_paper", () -> new ItemFlib(new Item.Properties().tab(TAB)));
+    ITEMS.register("shard_wood", () -> new ItemFlib(new Item.Properties().tab(TAB)));
     ///NO ..shard diamond? shard emerald shard lapis?    //shard_ender
     //
     //YES: 

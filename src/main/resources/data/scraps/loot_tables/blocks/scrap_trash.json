@@ -38,11 +38,7 @@
 								},
 								{
 									"type": "minecraft:item",
-									"name": "scraps:shard_glass"
-								},
-								{
-									"type": "minecraft:item",
-									"name": "scraps:shard_leather"
+									"name": "scraps:shard_wood"
 								},
 								{
 									"type": "minecraft:item",
@@ -59,7 +55,7 @@
 								},
 								{
 									"type": "minecraft:item",
-									"name": "scraps:shard_cloth",
+									"name": "scraps:shard_leather",
 									"functions": [
 										{
 											"function": "minecraft:set_count",

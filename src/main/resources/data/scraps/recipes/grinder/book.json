@@ -1,0 +1,25 @@
+{
+	"type": "plaingrinder:grinder",
+	"input": {
+		"item": "minecraft:book"
+	},
+	"result": {
+		"item": "scraps:shard_paper",
+		"count": 20
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "plaingrinder",
+					"type": "forge:mod_loaded"
+				},
+				{
+					"item": "plaingrinder:grinder",
+					"type": "forge:item_exists"
+				}
+			],
+			"type": "forge:and"
+		}
+	]
+}

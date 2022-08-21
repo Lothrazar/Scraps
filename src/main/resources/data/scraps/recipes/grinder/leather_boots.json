@@ -1,0 +1,25 @@
+{
+	"type": "plaingrinder:grinder",
+	"input": {
+		"item": "minecraft:leather_boots"
+	},
+	"result": {
+		"item": "scraps:shard_leather",
+		"count": 20
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "plaingrinder",
+					"type": "forge:mod_loaded"
+				},
+				{
+					"item": "plaingrinder:grinder",
+					"type": "forge:item_exists"
+				}
+			],
+			"type": "forge:and"
+		}
+	]
+}
