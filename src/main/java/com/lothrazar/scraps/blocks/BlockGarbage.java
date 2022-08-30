@@ -16,7 +16,7 @@ public class BlockGarbage extends BlockFlib {
   protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D);
 
   public BlockGarbage(Properties properties) {
-    super(properties.noOcclusion().strength(0.5F).speedFactor(0.4F).sound(SoundType.SOUL_SAND));
+    super(properties.noOcclusion().strength(0.5F).speedFactor(0.4F).sound(SoundType.SOUL_SAND), new BlockFlib.Settings().tooltip());
   }
 
   @Override

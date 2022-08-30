@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " s ",
+    "ggg"
+  ],
+  "key": {
+    "s": {
+      "tag": "forge:shards/bone"
+    },
+    "g": {
+      "tag": "scraps:garbage"
+    }
+  },
+  "result": {
+    "item": "scraps:scrap_bones",
+    "count": 2
+  }
+}

@@ -1,6 +1,7 @@
 package com.lothrazar.scraps.blocks;
 
 import com.lothrazar.library.block.BlockFlib;
+import com.lothrazar.library.block.BlockWaterlogFlib;
 import com.lothrazar.scraps.content.ScrapConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,13 +18,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BlockScraps extends BlockFlib {
+public class BlockScraps extends BlockWaterlogFlib {
 
   //just like carpet
-  protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
+  protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 1.1D, 16.0D);
 
   public BlockScraps(Properties properties) {
-    super(properties.strength(0.3F).noOcclusion(), new BlockFlib.Settings().noTooltip());
+    super(properties.strength(0.3F).noOcclusion(), new BlockFlib.Settings().tooltip());
   }
 
   //empty to let you walk thru like grass
@@ -50,11 +51,10 @@ public class BlockScraps extends BlockFlib {
   @Override
   public boolean canSurvive(BlockState bs, LevelReader level, BlockPos pos) {
     //    return level.getBlockState(pos.below()).getMaterial().isSolid();
-    return canSupportRigidBlock(level, pos.below());
+    return canSupportRigidBlock(level, pos.relative(Direction.DOWN));
   }
 
-  //update when surrounding changes
-  @SuppressWarnings("deprecation")
+  //update when surrounding changes 
   @Override
   public BlockState updateShape(BlockState bs, Direction face, BlockState bsOp, LevelAccessor level, BlockPos pos, BlockPos posOther) {
     return !bs.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(bs, face, bsOp, level, pos, posOther);

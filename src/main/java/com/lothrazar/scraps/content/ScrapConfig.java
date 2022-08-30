@@ -14,6 +14,7 @@ public class ScrapConfig {
   private static ForgeConfigSpec COMMON_CONFIG;
   public static BooleanValue WORLDGEN_ENABLED;
   public static BooleanValue STEPHARVEST_ENABLED;
+  public static BooleanValue COMPOSTER;
   public static IntValue METAL_SMALL_COUNT;
   public static IntValue METAL_SMALL_BOTTOM;
   public static IntValue METAL_SMALL_TOP;
@@ -40,7 +41,7 @@ public class ScrapConfig {
 
   private static void initConfig() {
     CFG.comment("General settings").push(ScrapModMain.MODID);
-    WORLDGEN_ENABLED = CFG.comment("Run worldgen from this mod in biome loader event").define("worldgen.enabled", true);
+    WORLDGEN_ENABLED = CFG.comment("true means 'Run worldgen from this mod in biome loader event'. If false then ALL default worldgen from this mod is disabled (configured features remain registered for use by modpack/datapack)").define("worldgen.enabled", true);
     //
     BONE_SMALL_COUNT = CFG.comment("Increase the count of these single spawns").defineInRange("worldgen.bone.small.count", 6, 1, 64);
     BONE_SMALL_BOTTOM = CFG.comment("Lowest point to generate this").defineInRange("worldgen.bone.small.bottom", -40, -9999, 9999);
@@ -63,7 +64,8 @@ public class ScrapConfig {
     TRASH_LARGE_BOTTOM = CFG.comment("Lowest point to generate this").defineInRange("worldgen.trash.large.bottom", -40, -9999, 9999);
     TRASH_LARGE_TOP = CFG.comment("Highest point to generate this").defineInRange("worldgen.trash.large.top", 222, -9999, 9999);
     //
-    STEPHARVEST_ENABLED = CFG.comment("If true then stepping on a scrap pile will harvest it").define("steptobreak.enabled", true);
+    COMPOSTER = CFG.comment("If true then some of the scraps will be allowed to go into the minecraft:composter block (shard_bone, shard_leather, shard_paper, shard_wood only)").define("composter.enabled", true);
+    STEPHARVEST_ENABLED = CFG.comment("If true then stepping on a scrap pile will harvest it").define("steptobreak.enabled", false);
     CFG.pop(); // one pop for every push
     COMMON_CONFIG = CFG.build();
   }

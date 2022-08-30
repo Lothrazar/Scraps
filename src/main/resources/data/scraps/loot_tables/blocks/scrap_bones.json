@@ -41,11 +41,19 @@
 								},
 								{
 									"type": "minecraft:item",
+									"name": "scraps:junk"
+								},
+								{
+									"type": "minecraft:item",
 									"name": "scraps:shard_bone"
 								},
 								{
 									"type": "minecraft:item",
 									"name": "scraps:shard_bone"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_paper"
 								},
 								{
 									"type": "minecraft:item",

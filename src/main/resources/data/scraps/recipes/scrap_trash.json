@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "sss",
+    "ggg"
+  ],
+  "key": {
+    "s": {
+      "tag": "scraps:junk"
+    },
+    "g": {
+      "tag": "scraps:garbage"
+    }
+  },
+  "result": {
+    "item": "scraps:scrap_trash",
+    "count": 2
+  }
+}

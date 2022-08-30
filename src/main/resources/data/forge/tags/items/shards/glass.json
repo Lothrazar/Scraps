@@ -1,0 +1,7 @@
+{
+	"replace": false,
+	"values": [
+		"scraps:shard_glass",
+	     {"required":false, "id": 	"quark:clear_shard"    }
+	]
+}

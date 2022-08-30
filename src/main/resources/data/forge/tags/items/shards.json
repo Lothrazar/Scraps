@@ -1,14 +1,13 @@
 {
   "replace": false,
   "values": [
-    "#forge:shards/amethyst",
+  	"scraps:junk",
     "#forge:shards/bone",
     "#forge:shards/brick",
     "#forge:shards/flint",
     "#forge:shards/glass",
     "#forge:shards/leather",
     "#forge:shards/paper",
-    "#forge:shards/prismarine",
     "#forge:shards/wood"
   ]
 }

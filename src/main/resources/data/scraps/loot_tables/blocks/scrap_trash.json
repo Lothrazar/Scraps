@@ -42,12 +42,24 @@
 								},
 								{
 									"type": "minecraft:item",
+									"name": "scraps:shard_glass"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_glass"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:shard_paper"
+								},
+								{
+									"type": "minecraft:item",
 									"name": "scraps:shard_paper",
 									"functions": [
 										{
 											"function": "minecraft:set_count",
 											"count": {
-												"min": 2,
+												"min": 1,
 												"max": 8
 											}
 										}
@@ -60,7 +72,7 @@
 										{
 											"function": "minecraft:set_count",
 											"count": {
-												"min": 2,
+												"min": 1,
 												"max": 8
 											}
 										}
@@ -73,7 +85,7 @@
 										{
 											"function": "minecraft:set_count",
 											"count": {
-												"min": 2,
+												"min": 1,
 												"max": 12
 											}
 										}

@@ -39,6 +39,7 @@ public class ScrapModMain {
     //    MinecraftForge.EVENT_BUS.register(new GrindEvents());
     event.enqueueWork(() -> {
       ScrapGenPlacements.init();
+      ScrapModRegistry.composter();
     });
   }
   // 

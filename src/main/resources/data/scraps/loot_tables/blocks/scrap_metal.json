@@ -29,13 +29,21 @@
 								},
 								{
 									"type": "minecraft:item",
+									"name": "scraps:junk"
+								},
+								{
+									"type": "minecraft:item",
+									"name": "scraps:junk"
+								},
+								{
+									"type": "minecraft:item",
 									"name": "scraps:shard_flint",
 									"functions": [
 										{
 											"function": "minecraft:set_count",
 											"count": {
-												"min": 2,
-												"max": 8
+												"min": 1,
+												"max": 5
 											}
 										}
 									]
@@ -47,8 +55,8 @@
 										{
 											"function": "minecraft:set_count",
 											"count": {
-												"min": 2,
-												"max": 8
+												"min": 1,
+												"max": 5
 											}
 										}
 									]
@@ -60,8 +68,8 @@
 										{
 											"function": "minecraft:set_count",
 											"count": {
-												"min": 2,
-												"max": 8
+												"min": 1,
+												"max": 7
 											}
 										}
 									]

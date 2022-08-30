@@ -8,8 +8,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
@@ -22,14 +22,11 @@ public class ScrapModRegistry {
 
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ScrapModMain.MODID);
   public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ScrapModMain.MODID);
-  //  public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, ScrapModMain.MODID);
-  //  public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, ScrapModMain.MODID);
-  //  public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ScrapModMain.MODID);
   public static final CreativeModeTab TAB = new CreativeModeTab(ScrapModMain.MODID) {
 
     @Override
     public ItemStack makeIcon() {
-      return new ItemStack(SCRAP_TRASH.get());
+      return new ItemStack(GARBAGE.get());
     }
   };
   public static final RegistryObject<Block> GARBAGE = BLOCKS.register("garbage", () -> new BlockGarbage(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BROWN).strength(0.5F)));
@@ -39,36 +36,33 @@ public class ScrapModRegistry {
   public static final RegistryObject<Block> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   public static final RegistryObject<Block> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of(Material.STONE).instabreak()));
   static {
-    //blockitems    
-    //?? trash_bag : use it on the piles to pick them up it charges durability
-    // full garbage bag-> garbage block and container item as the empty trash bag again?  
-    //    ITEMS.register("scavenger", () -> new Item(new Item.Properties().tab(TAB))); // BOTTLE FULL OF JUNK?
     ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_metal", () -> new BlockItem(SCRAP_METAL.get(), new Item.Properties().tab(TAB)));
     ITEMS.register("scrap_brush", () -> new BlockItem(SCRAP_BRUSH.get(), new Item.Properties().tab(TAB)));
-    //items
-    ITEMS.register("junk", () -> new ItemFlib(new Item.Properties().tab(TAB)) {
-
-      @Override
-      public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
-        return 200;
-      }
-    }); //dead item, used for crafting
-    ITEMS.register("shard_bone", () -> new ItemFlib(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_flint", () -> new ItemFlib(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_leather", () -> new ItemFlib(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_brick", () -> new ItemFlib(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_paper", () -> new ItemFlib(new Item.Properties().tab(TAB)));
-    ITEMS.register("shard_wood", () -> new ItemFlib(new Item.Properties().tab(TAB)));
-    ///NO ..shard diamond? shard emerald shard lapis?    //shard_ender
-    //
-    //YES: 
-    // shard_obsidian
-    //    ITEMS.register("shard_stone", () -> new Item(new Item.Properties().tab(TAB)));//4x into cobblestone?  
+    ITEMS.register("junk", () -> new ItemFlib(new Item.Properties().tab(TAB), new ItemFlib.Settings().tooltip().burnTime(200)));
   }
-  //
-  //  public static final RegistryObject<RecipeType<RecipeSalvager>> RECIPE = RECIPE_TYPES.register("salvager", () -> new RecipeType<RecipeSalvager>() {});
-  //  public static final RegistryObject<RecipeSalvager.SerializeCrusher> RECIPE_S = RECIPE_SERIALIZERS.register("salvager", () -> new RecipeSalvager.SerializeCrusher());
+
+  @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+  public static class ShardItems {
+
+    public static final RegistryObject<Item> SHARD_BONE = ITEMS.register("shard_bone", () -> new ItemShard(new Item.Properties().tab(TAB))); //comp
+    public static final RegistryObject<Item> SHARD_BRICK = ITEMS.register("shard_brick", () -> new ItemShard(new Item.Properties().tab(TAB))); //hard
+    public static final RegistryObject<Item> SHARD_FLINT = ITEMS.register("shard_flint", () -> new ItemShard(new Item.Properties().tab(TAB))); //hard
+    public static final RegistryObject<Item> SHARD_GLASS = ITEMS.register("shard_glass", () -> new ItemShard(new Item.Properties().tab(TAB))); //hard
+    public static final RegistryObject<Item> SHARD_LEATHER = ITEMS.register("shard_leather", () -> new ItemShard(new Item.Properties().tab(TAB))); //comp
+    public static final RegistryObject<Item> SHARD_PAPER = ITEMS.register("shard_paper", () -> new ItemShard(new Item.Properties().tab(TAB))); //comp
+    public static final RegistryObject<Item> SHARD_WOOD = ITEMS.register("shard_wood", () -> new ItemShard(new Item.Properties().tab(TAB))); //comp
+  }
+
+  public static void composter() {
+    if (ScrapConfig.COMPOSTER.get()) {
+      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_BONE.get(), 0.3F);
+      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_LEATHER.get(), 0.3F);
+      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_PAPER.get(), 0.3F);
+      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_WOOD.get(), 0.3F);
+    }
+    //NOT COMPOST: BRICK, FLINT, GLASS
+  }
 }

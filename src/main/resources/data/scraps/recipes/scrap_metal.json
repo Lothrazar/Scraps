@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " s ",
+    "ggg"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:iron_nugget"
+    },
+    "g": {
+      "tag": "scraps:garbage"
+    }
+  },
+  "result": {
+    "item": "scraps:scrap_metal",
+    "count": 2
+  }
+}

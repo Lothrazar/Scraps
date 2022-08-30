@@ -1,7 +1,7 @@
 {
-	"itemGroup.scraps":"Scraps Junk and Garbage",
+	"itemGroup.scraps":"Scraps and Shards",
 
-	"junk.guide":"Junk is useless leftover material found in garbage and scrap piles",
+	"item.scraps.junk.tooltip":"Junk is useless leftover material found in garbage and scrap piles",
 	"shard.guide":"Shards are found inside garbage and scrap piles",
 	"scrap.guide":"Scrap piles are found around the world.  They can shards of useful materials.  ",
 	"garbage.guide":"Garbage blocks are similar to compressed scrap piles in solid form",
@@ -14,6 +14,7 @@
 	"item.scraps.shard_bone": "Bone Shard",
 	"item.scraps.shard_brick": "Brick Shard",
 	"item.scraps.shard_flint": "Flint Shard",
+	"item.scraps.shard_glass": "Glass Shard",
 	"item.scraps.shard_leather": "Leather Shard",
 	"item.scraps.shard_paper": "Paper Shard",
 	"item.scraps.shard_wood": "Wooden Shard"
