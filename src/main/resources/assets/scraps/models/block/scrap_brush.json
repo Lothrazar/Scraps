@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "translucent",
 	"parent": "minecraft:block/block",
 	"textures": {
 		"0": "block/moss_block",

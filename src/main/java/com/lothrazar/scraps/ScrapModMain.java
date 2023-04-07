@@ -2,13 +2,10 @@ package com.lothrazar.scraps;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.lothrazar.scraps.content.ClientStuff;
 import com.lothrazar.scraps.content.ScrapConfig;
 import com.lothrazar.scraps.content.ScrapModRegistry;
 import com.lothrazar.scraps.world.ScrapGenPlacements;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -29,9 +26,6 @@ public class ScrapModMain {
     //    ScrapModRegistry.RECIPE_SERIALIZERS.register(eventBus);
     eventBus.addListener(this::setup);
     ScrapConfig.setup();
-    DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-      eventBus.addListener(ClientStuff::setup);
-    });
     InterModComms.sendTo("flib", "init", () -> new Object());
   }
 

@@ -1,19 +1,14 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net/' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-    }
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+//    id 'checkstyle'
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 import net.minecraftforge.gradle.common.tasks.SignJar
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
 
 
 version = "${mc_version}-${mod_version}"
@@ -22,14 +17,8 @@ archivesBaseName = 'scraps'
 
 
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    
-    
-    mappings channel: 'official', version: '1.18.2'
+
+    mappings channel: 'official', version: "${mc_version}"
  
   //  accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -86,14 +75,13 @@ dependencies {
     // Examples using mod jars from ./libs
     implementation fg.deobf("blank:flib-${mc_version}:${flib_version}")
     // OPTIONAL
-    implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
-	
+	runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
   //  implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
   //  compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
   //  runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
-    implementation fg.deobf("curse.maven:cyclic-239286:3895500")
-    implementation fg.deobf("curse.maven:plain-grinder-452000:3653027")
+  //  implementation fg.deobf("curse.maven:cyclic-239286:3895500")
+  //  implementation fg.deobf("curse.maven:plain-grinder-452000:3653027")
   //  implementation fg.deobf("curse.maven:the-one-probe-245211:3671753")
   //  implementation fg.deobf("curse.maven:simple-storage-network-268495:3257204")
   //  implementation fg.deobf("curse.maven:storage-drawers-223852:3180569")
@@ -164,6 +152,10 @@ publishing {
             url "file:///${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
 
 task signJar(type: SignJar, dependsOn: jar) {

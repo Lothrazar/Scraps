@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "translucent",
 	"parent": "minecraft:block/block",
 	"textures": {
 		"particle": "scraps:block/scrap_trash",
