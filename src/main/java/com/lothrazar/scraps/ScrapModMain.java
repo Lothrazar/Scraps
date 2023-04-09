@@ -36,6 +36,9 @@ public class ScrapModMain {
       ScrapModRegistry.composter();
     });
   }
+  /* Dynamic registry objects */
+  //what the fuck
+  //  public static final ResourceKey<PlacedFeature> METAL_SMALL = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "metal_small"));
   // 
   // TODO: salvaging garbage block for good stuff
   // what to salvage
