@@ -1,9 +1,9 @@
 {
-  "feature": "scraps:metal_default",
+  "feature": "scraps:trash_sand",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 6
+      "chance": 3
     },
     {
       "type": "minecraft:in_square"
