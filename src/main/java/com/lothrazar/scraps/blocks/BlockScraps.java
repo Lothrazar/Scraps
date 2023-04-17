@@ -2,7 +2,7 @@ package com.lothrazar.scraps.blocks;
 
 import com.lothrazar.library.block.BlockFlib;
 import com.lothrazar.library.block.BlockWaterlogFlib;
-import com.lothrazar.scraps.content.ScrapConfig;
+import com.lothrazar.scraps.content.ConfigRegistryScrap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
@@ -42,7 +42,7 @@ public class BlockScraps extends BlockWaterlogFlib {
   //if config says so, break block on contact
   @Override
   public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-    if (!worldIn.isClientSide && ScrapConfig.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
+    if (!worldIn.isClientSide && ConfigRegistryScrap.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
       worldIn.destroyBlock(pos, true);
     }
   }

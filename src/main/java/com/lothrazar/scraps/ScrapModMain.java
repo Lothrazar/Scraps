@@ -2,8 +2,8 @@ package com.lothrazar.scraps;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.lothrazar.scraps.content.ScrapConfig;
-import com.lothrazar.scraps.content.ScrapModRegistry;
+import com.lothrazar.scraps.content.ConfigRegistryScrap;
+import com.lothrazar.scraps.content.RegistryScrap;
 import com.lothrazar.scraps.world.ScrapGenPlacements;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.InterModComms;
@@ -19,13 +19,13 @@ public class ScrapModMain {
 
   public ScrapModMain() {
     IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-    ScrapModRegistry.BLOCKS.register(eventBus);
-    ScrapModRegistry.ITEMS.register(eventBus);
+    RegistryScrap.BLOCKS.register(eventBus);
+    RegistryScrap.ITEMS.register(eventBus);
     //    ScrapModRegistry.TILE_ENTITIES.register(eventBus);
     //    ScrapModRegistry.RECIPE_TYPES.register(eventBus);
     //    ScrapModRegistry.RECIPE_SERIALIZERS.register(eventBus);
     eventBus.addListener(this::setup);
-    ScrapConfig.setup();
+    new ConfigRegistryScrap();
     InterModComms.sendTo("flib", "init", () -> new Object());
   }
 
@@ -33,7 +33,7 @@ public class ScrapModMain {
     //    MinecraftForge.EVENT_BUS.register(new GrindEvents());
     event.enqueueWork(() -> {
       ScrapGenPlacements.init();
-      ScrapModRegistry.composter();
+      RegistryScrap.composter();
     });
   }
   /* Dynamic registry objects */

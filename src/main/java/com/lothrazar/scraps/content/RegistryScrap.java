@@ -1,6 +1,7 @@
 package com.lothrazar.scraps.content;
 
 import com.lothrazar.library.item.ItemFlib;
+import com.lothrazar.library.registry.RecipeCompostFactory;
 import com.lothrazar.library.registry.RegistryFactory;
 import com.lothrazar.scraps.ScrapModMain;
 import com.lothrazar.scraps.blocks.BlockGarbage;
@@ -8,7 +9,6 @@ import com.lothrazar.scraps.blocks.BlockScraps;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -19,7 +19,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ScrapModRegistry {
+public class RegistryScrap {
 
   public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ScrapModMain.MODID);
   public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ScrapModMain.MODID);
@@ -57,11 +57,12 @@ public class ScrapModRegistry {
   }
 
   public static void composter() {
-    if (ScrapConfig.COMPOSTER.get()) {
-      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_BONE.get(), 0.3F);
-      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_LEATHER.get(), 0.3F);
-      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_PAPER.get(), 0.3F);
-      ComposterBlock.COMPOSTABLES.put(ShardItems.SHARD_WOOD.get(), 0.3F);
+    if (ConfigRegistryScrap.COMPOSTER.get()) {
+      final float f = RecipeCompostFactory.FillValues.LEAVES;
+      RecipeCompostFactory.put(ShardItems.SHARD_BONE.get(), f);
+      RecipeCompostFactory.put(ShardItems.SHARD_LEATHER.get(), f);
+      RecipeCompostFactory.put(ShardItems.SHARD_PAPER.get(), f);
+      RecipeCompostFactory.put(ShardItems.SHARD_WOOD.get(), f);
     }
     //NOT COMPOST: BRICK, FLINT, GLASS
   }
