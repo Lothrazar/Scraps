@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": ["scraps:bones_grass","scraps:bones_gravel","scraps:brush_grass","scraps:brush_sand","scraps:metal_stone","scraps:trash_sand","scraps:trash_stone"],
-  "step": "top_layer_modification"
-}

@@ -48,7 +48,7 @@ public class ScrapModMain {
   //different ways to extract resources (LOTS OF WAYS ALREDY EXST) to get different 'shards'
   //
   // 
-  //Darkosto — 07/11/2022
+  //Darkosto-07/11/2022
   //  *[DONE] Configurable size for scrap generation (Potentially have small, medium, and large piles)
   //  *[DONE] Y level configs
   //  *[DONE using loot tables] Use a similar type of harvest to the minecraft archeology mechanics? Using a shovel or tool to properly break the blocks instead of stepping on
