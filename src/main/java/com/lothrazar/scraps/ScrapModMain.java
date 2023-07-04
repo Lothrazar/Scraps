@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.lothrazar.scraps.content.ConfigRegistryScrap;
 import com.lothrazar.scraps.content.RegistryScrap;
-import com.lothrazar.scraps.world.ScrapGenPlacements;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -21,27 +20,18 @@ public class ScrapModMain {
     IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
     RegistryScrap.BLOCKS.register(eventBus);
     RegistryScrap.ITEMS.register(eventBus);
-    //    ScrapModRegistry.TILE_ENTITIES.register(eventBus);
-    //    ScrapModRegistry.RECIPE_TYPES.register(eventBus);
-    //    ScrapModRegistry.RECIPE_SERIALIZERS.register(eventBus);
     eventBus.addListener(this::setup);
     new ConfigRegistryScrap();
     InterModComms.sendTo("flib", "init", () -> new Object());
   }
 
   private void setup(final FMLCommonSetupEvent event) {
-    //    MinecraftForge.EVENT_BUS.register(new GrindEvents());
     event.enqueueWork(() -> {
-      ScrapGenPlacements.init();
       RegistryScrap.composter();
     });
   }
   /* Dynamic registry objects */
-  //what the fuck
-  //  public static final ResourceKey<PlacedFeature> METAL_SMALL = ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(MODID, "metal_small"));
   // 
-  // TODO: salvaging garbage block for good stuff
-  // what to salvage
   // 
   //MASH STUFF TOGETHER 9x9 DATA TAG
   // into junk and garbage
