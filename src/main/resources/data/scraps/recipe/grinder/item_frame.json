@@ -1,0 +1,25 @@
+{
+	"type": "plaingrinder:grinder",
+	"input": {
+		"id": "minecraft:item_frame"
+	},
+	"result": {
+		"id": "scraps:shard_leather",
+		"count": 5
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "plaingrinder",
+					"type": "neoforge:mod_loaded"
+				},
+				{
+					"item": "plaingrinder:grinder",
+					"type": "neoforge:item_exists"
+				}
+			],
+			"type": "neoforge:and"
+		}
+	]
+}

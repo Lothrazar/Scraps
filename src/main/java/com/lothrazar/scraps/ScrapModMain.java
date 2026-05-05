@@ -1,28 +1,27 @@
 package com.lothrazar.scraps;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import net.neoforged.fml.config.ModConfig;
+import org.slf4j.Logger;
+import com.mojang.logging.LogUtils;
 import com.lothrazar.scraps.content.ConfigRegistryScrap;
 import com.lothrazar.scraps.content.RegistryScrap;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod(ScrapModMain.MODID)
 public class ScrapModMain {
 
   public static final String MODID = "scraps";
-  public static final Logger LOGGER = LogManager.getLogger();
+  public static final Logger LOGGER = LogUtils.getLogger();
 
-  public ScrapModMain() {
-    IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+  public ScrapModMain(IEventBus eventBus, ModContainer modContainer) {
     RegistryScrap.BLOCKS.register(eventBus);
     RegistryScrap.ITEMS.register(eventBus);
+    RegistryScrap.TABS.register(eventBus);
     eventBus.addListener(this::setup);
-    new ConfigRegistryScrap();
-    InterModComms.sendTo("flib", "init", () -> new Object());
+    modContainer.registerConfig(ModConfig.Type.COMMON, ConfigRegistryScrap.CONFIG);
   }
 
   private void setup(final FMLCommonSetupEvent event) {

@@ -1,17 +1,18 @@
 package com.lothrazar.scraps.content;
 
-import com.lothrazar.library.config.ConfigTemplate;
 import com.lothrazar.scraps.ScrapModMain;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-public class ConfigRegistryScrap extends ConfigTemplate {
+public class ConfigRegistryScrap {
 
-  private static final ForgeConfigSpec CONFIG;
-  public static BooleanValue STEPHARVEST_ENABLED;
-  public static BooleanValue COMPOSTER;
+  private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+  public static final ModConfigSpec.BooleanValue COMPOSTER;
+  public static final ModConfigSpec.BooleanValue STEPHARVEST_ENABLED;
+  public static final ModConfigSpec CONFIG;
+
   static {
-    final ForgeConfigSpec.Builder BUILDER = builder();
     BUILDER.comment("General settings").push(ScrapModMain.MODID);
     //
     COMPOSTER = BUILDER.comment("If true then some of the scraps will be allowed to go into the minecraft:composter block (shard_bone, shard_leather, shard_paper, shard_wood only)").define("composter.enabled", true);
@@ -20,7 +21,7 @@ public class ConfigRegistryScrap extends ConfigTemplate {
     CONFIG = BUILDER.build();
   }
 
-  public ConfigRegistryScrap() {
-    CONFIG.setConfig(setup(ScrapModMain.MODID));
+  public ConfigRegistryScrap(ModContainer modContainer) {
+    modContainer.registerConfig(ModConfig.Type.COMMON, CONFIG);
   }
 }
