@@ -1,0 +1,25 @@
+{
+	"type": "plaingrinder:grinder",
+	"input": {
+		"id": "minecraft:wooden_pickaxe"
+	},
+	"result": {
+		"id": "scraps:shard_wood",
+		"count": 16
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "plaingrinder",
+					"type": "neoforge:mod_loaded"
+				},
+				{
+					"item": "plaingrinder:grinder",
+					"type": "neoforge:item_exists"
+				}
+			],
+			"type": "neoforge:and"
+		}
+	]
+}

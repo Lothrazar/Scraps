@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "c:shards/bone"
+		},
+		{
+			"tag": "c:shards/bone"
+		},
+		{
+			"tag": "c:shards/bone"
+		},
+		{
+			"tag": "c:shards/bone"
+		}
+	],
+	"result": {
+		"id": "minecraft:bone_meal",
+		"count": 1
+	}
+}

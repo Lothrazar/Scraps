@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+  	"scraps:junk",
+    "#c:shards/bone",
+    "#c:shards/brick",
+    "#c:shards/flint",
+    "#c:shards/glass",
+    "#c:shards/leather",
+    "#c:shards/paper",
+    "#c:shards/wood"
+  ]
+}

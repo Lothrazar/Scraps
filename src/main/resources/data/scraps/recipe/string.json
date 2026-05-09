@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "c:shards/cloth"
+		},
+		{
+			"tag": "c:shards/cloth"
+		},
+		{
+			"tag": "c:shards/cloth"
+		},
+		{
+			"tag": "c:shards/cloth"
+		}
+	],
+	"result": {
+		"id": "minecraft:string",
+		"count": 1
+	}
+}

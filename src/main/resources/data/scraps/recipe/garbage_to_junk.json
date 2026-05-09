@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "scraps:garbage"
+		}
+	],
+	"result": {
+		"id": "scraps:junk",
+		"count": 8
+	}
+}

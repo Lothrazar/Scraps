@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "c:shards/flint"
+		},
+		{
+			"tag": "c:shards/flint"
+		},
+		{
+			"tag": "c:shards/flint"
+		},
+		{
+			"tag": "c:shards/flint"
+		}
+	],
+	"result": {
+		"id": "minecraft:flint",
+		"count": 1
+	}
+}

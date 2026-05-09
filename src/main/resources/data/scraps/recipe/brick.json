@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "c:shards/brick"
+		},
+		{
+			"tag": "c:shards/brick"
+		},
+		{
+			"tag": "c:shards/brick"
+		},
+		{
+			"tag": "c:shards/brick"
+		}
+	],
+	"result": {
+		"id": "minecraft:brick",
+		"count": 1
+	}
+}
