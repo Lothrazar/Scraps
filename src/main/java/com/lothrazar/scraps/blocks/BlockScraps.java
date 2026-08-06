@@ -5,12 +5,14 @@ import com.lothrazar.library.block.BlockWaterlogFlib;
 import com.lothrazar.scraps.content.ConfigRegistryScrap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,8 +43,8 @@ public class BlockScraps extends BlockWaterlogFlib {
 
   //if config says so, break block on contact
   @Override
-  public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn) {
-    if (!worldIn.isClientSide && ConfigRegistryScrap.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
+  public void entityInside(BlockState state, Level worldIn, BlockPos pos, Entity entityIn, InsideBlockEffectApplier effectApplier, boolean isPrecise) {
+    if (!worldIn.isClientSide() && ConfigRegistryScrap.STEPHARVEST_ENABLED.get() && entityIn instanceof Player) {
       worldIn.destroyBlock(pos, true);
     }
   }
@@ -56,7 +58,7 @@ public class BlockScraps extends BlockWaterlogFlib {
 
   //update when surrounding changes 
   @Override
-  public BlockState updateShape(BlockState bs, Direction face, BlockState bsOp, LevelAccessor level, BlockPos pos, BlockPos posOther) {
-    return !bs.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(bs, face, bsOp, level, pos, posOther);
+  public BlockState updateShape(BlockState bs, LevelReader level, ScheduledTickAccess ticks, BlockPos pos, Direction face, BlockPos posOther, BlockState bsOp, RandomSource random) {
+    return !bs.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(bs, level, ticks, pos, face, posOther, bsOp, random);
   }
 }

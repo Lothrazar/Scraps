@@ -32,11 +32,11 @@ public class RegistryScrap {
   public static final DeferredBlock<BlockScraps> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of().instabreak()));
   public static final DeferredBlock<BlockScraps> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of().instabreak()));
 
-  static final DeferredItem<BlockItem> garbage = ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties()));
-  static final DeferredItem<BlockItem> scrap_trash = ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties()));
-  static final DeferredItem<BlockItem> scrap_bones = ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties()));
-  static final DeferredItem<BlockItem> scrap_metal = ITEMS.register("scrap_metal", () -> new BlockItem(SCRAP_METAL.get(), new Item.Properties()));
-  static final DeferredItem<BlockItem> scrap_brush = ITEMS.register("scrap_brush", () -> new BlockItem(SCRAP_BRUSH.get(), new Item.Properties()));
+  static final DeferredItem<BlockItem> garbage = ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_trash = ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties().useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_bones = ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_metal = ITEMS.register("scrap_metal", () -> new BlockItem(SCRAP_METAL.get(), new Item.Properties().useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_brush = ITEMS.register("scrap_brush", () -> new BlockItem(SCRAP_BRUSH.get(), new Item.Properties().useBlockDescriptionPrefix()));
   static final DeferredItem<ItemFlib> junk = ITEMS.register("junk", () -> new ItemFlib(new Item.Properties(), new ItemFlib.Settings().tooltip().burnTime(200)));
 
   public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("tab", () ->
