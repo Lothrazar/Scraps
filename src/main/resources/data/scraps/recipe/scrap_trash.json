@@ -6,12 +6,8 @@
     "ggg"
   ],
   "key": {
-    "s": {
-      "tag": "scraps:junk"
-    },
-    "g": {
-      "tag": "scraps:garbage"
-    }
+    "s": "#scraps:junk",
+    "g": "#scraps:garbage"
   },
   "result": {
     "id": "scraps:scrap_trash",

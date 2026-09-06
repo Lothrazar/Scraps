@@ -6,12 +6,8 @@
     "ggg"
   ],
   "key": {
-    "s": {
-      "tag": "c:shards/bone"
-    },
-    "g": {
-      "tag": "scraps:garbage"
-    }
+    "s": "#c:shards/bone",
+    "g": "#scraps:garbage"
   },
   "result": {
     "id": "scraps:scrap_bones",

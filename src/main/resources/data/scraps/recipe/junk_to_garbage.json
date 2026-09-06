@@ -1,36 +1,18 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"ingredients": [
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		},
-		{
-			"tag": "scraps:junk"
-		}
-	],
-	"result": {
-		"id": "scraps:garbage",
-		"count": 1
-	}
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk",
+    "#scraps:junk"
+  ],
+  "result": {
+    "id": "scraps:garbage",
+    "count": 1
+  }
 }

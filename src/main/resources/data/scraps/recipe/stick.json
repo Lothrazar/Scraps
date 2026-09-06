@@ -1,18 +1,12 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"ingredients": [
-		{
-			"tag": "c:shards/wood"
-		},
-		{
-			"tag": "c:shards/wood"
-		},
-		{
-			"tag": "c:shards/wood"
-		}
-	],
-	"result": {
-		"id": "minecraft:stick",
-		"count": 1
-	}
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#c:shards/wood",
+    "#c:shards/wood",
+    "#c:shards/wood"
+  ],
+  "result": {
+    "id": "minecraft:stick",
+    "count": 1
+  }
 }

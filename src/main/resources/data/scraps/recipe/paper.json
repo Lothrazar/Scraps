@@ -1,36 +1,18 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"ingredients": [
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		},
-		{
-			"tag": "c:shards/paper"
-		}
-	],
-	"result": {
-		"id": "minecraft:paper",
-		"count": 1
-	}
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper",
+    "#c:shards/paper"
+  ],
+  "result": {
+    "id": "minecraft:paper",
+    "count": 1
+  }
 }

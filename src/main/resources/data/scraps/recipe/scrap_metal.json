@@ -9,9 +9,7 @@
     "s": {
       "id": "minecraft:iron_nugget"
     },
-    "g": {
-      "tag": "scraps:garbage"
-    }
+    "g": "#scraps:garbage"
   },
   "result": {
     "id": "scraps:scrap_metal",

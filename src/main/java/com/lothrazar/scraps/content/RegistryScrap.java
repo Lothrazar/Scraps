@@ -25,19 +25,19 @@ public class RegistryScrap {
   public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ScrapModMain.MODID);
 
 
-  public static final DeferredBlock<BlockGarbage> GARBAGE = BLOCKS.register("garbage", () -> new BlockGarbage(Block.Properties.of().mapColor(DyeColor.BROWN).strength(0.5F)));
+  public static final DeferredBlock<BlockGarbage> GARBAGE = BLOCKS.registerBlock("garbage", props -> new BlockGarbage(props.mapColor(DyeColor.BROWN).strength(0.5F)));
   //junk is a small pile of stuff
-  public static final DeferredBlock<BlockScraps> SCRAP_TRASH = BLOCKS.register("scrap_trash", () -> new BlockScraps(Block.Properties.of().instabreak()));
-  public static final DeferredBlock<BlockScraps> SCRAP_BONES = BLOCKS.register("scrap_bones", () -> new BlockScraps(Block.Properties.of().instabreak()));
-  public static final DeferredBlock<BlockScraps> SCRAP_METAL = BLOCKS.register("scrap_metal", () -> new BlockScraps(Block.Properties.of().instabreak()));
-  public static final DeferredBlock<BlockScraps> SCRAP_BRUSH = BLOCKS.register("scrap_brush", () -> new BlockScraps(Block.Properties.of().instabreak()));
+  public static final DeferredBlock<BlockScraps> SCRAP_TRASH = BLOCKS.registerBlock("scrap_trash", props -> new BlockScraps(props.instabreak()));
+  public static final DeferredBlock<BlockScraps> SCRAP_BONES = BLOCKS.registerBlock("scrap_bones", props -> new BlockScraps(props.instabreak()));
+  public static final DeferredBlock<BlockScraps> SCRAP_METAL = BLOCKS.registerBlock("scrap_metal", props -> new BlockScraps(props.instabreak()));
+  public static final DeferredBlock<BlockScraps> SCRAP_BRUSH = BLOCKS.registerBlock("scrap_brush", props -> new BlockScraps(props.instabreak()));
 
-  static final DeferredItem<BlockItem> garbage = ITEMS.register("garbage", () -> new BlockItem(GARBAGE.get(), new Item.Properties().useBlockDescriptionPrefix()));
-  static final DeferredItem<BlockItem> scrap_trash = ITEMS.register("scrap_trash", () -> new BlockItem(SCRAP_TRASH.get(), new Item.Properties().useBlockDescriptionPrefix()));
-  static final DeferredItem<BlockItem> scrap_bones = ITEMS.register("scrap_bones", () -> new BlockItem(SCRAP_BONES.get(), new Item.Properties().useBlockDescriptionPrefix()));
-  static final DeferredItem<BlockItem> scrap_metal = ITEMS.register("scrap_metal", () -> new BlockItem(SCRAP_METAL.get(), new Item.Properties().useBlockDescriptionPrefix()));
-  static final DeferredItem<BlockItem> scrap_brush = ITEMS.register("scrap_brush", () -> new BlockItem(SCRAP_BRUSH.get(), new Item.Properties().useBlockDescriptionPrefix()));
-  static final DeferredItem<ItemFlib> junk = ITEMS.register("junk", () -> new ItemFlib(new Item.Properties(), new ItemFlib.Settings().tooltip().burnTime(200)));
+  static final DeferredItem<BlockItem> garbage = ITEMS.registerItem("garbage", props -> new BlockItem(GARBAGE.get(), props.useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_trash = ITEMS.registerItem("scrap_trash", props -> new BlockItem(SCRAP_TRASH.get(), props.useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_bones = ITEMS.registerItem("scrap_bones", props -> new BlockItem(SCRAP_BONES.get(), props.useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_metal = ITEMS.registerItem("scrap_metal", props -> new BlockItem(SCRAP_METAL.get(), props.useBlockDescriptionPrefix()));
+  static final DeferredItem<BlockItem> scrap_brush = ITEMS.registerItem("scrap_brush", props -> new BlockItem(SCRAP_BRUSH.get(), props.useBlockDescriptionPrefix()));
+  static final DeferredItem<ItemFlib> junk = ITEMS.registerItem("junk", props -> new ItemFlib(props, new ItemFlib.Settings().tooltip().burnTime(200)));
 
   public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("tab", () ->
       CreativeModeTab.builder()
@@ -50,13 +50,13 @@ public class RegistryScrap {
           }).build());
 
 
-  public static final DeferredItem<ItemShard> SHARD_BONE = ITEMS.register("shard_bone", () -> new ItemShard(new Item.Properties())); //comp
-  public static final DeferredItem<ItemShard> SHARD_BRICK = ITEMS.register("shard_brick", () -> new ItemShard(new Item.Properties())); //hard
-  public static final DeferredItem<ItemShard> SHARD_FLINT = ITEMS.register("shard_flint", () -> new ItemShard(new Item.Properties())); //hard
-  public static final DeferredItem<ItemShard> SHARD_GLASS = ITEMS.register("shard_glass", () -> new ItemShard(new Item.Properties())); //hard
-  public static final DeferredItem<ItemShard> SHARD_LEATHER = ITEMS.register("shard_leather", () -> new ItemShard(new Item.Properties())); //comp
-  public static final DeferredItem<ItemShard> SHARD_PAPER = ITEMS.register("shard_paper", () -> new ItemShard(new Item.Properties())); //comp
-  public static final DeferredItem<ItemShard> SHARD_WOOD = ITEMS.register("shard_wood", () -> new ItemShard(new Item.Properties())); //comp
+  public static final DeferredItem<ItemShard> SHARD_BONE = ITEMS.registerItem("shard_bone", props -> new ItemShard(props)); //comp
+  public static final DeferredItem<ItemShard> SHARD_BRICK = ITEMS.registerItem("shard_brick", props -> new ItemShard(props)); //hard
+  public static final DeferredItem<ItemShard> SHARD_FLINT = ITEMS.registerItem("shard_flint", props -> new ItemShard(props)); //hard
+  public static final DeferredItem<ItemShard> SHARD_GLASS = ITEMS.registerItem("shard_glass", props -> new ItemShard(props)); //hard
+  public static final DeferredItem<ItemShard> SHARD_LEATHER = ITEMS.registerItem("shard_leather", props -> new ItemShard(props)); //comp
+  public static final DeferredItem<ItemShard> SHARD_PAPER = ITEMS.registerItem("shard_paper", props -> new ItemShard(props)); //comp
+  public static final DeferredItem<ItemShard> SHARD_WOOD = ITEMS.registerItem("shard_wood", props -> new ItemShard(props)); //comp
 
 
   public static void composter() {
